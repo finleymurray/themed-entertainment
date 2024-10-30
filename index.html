@@ -9,7 +9,7 @@
         body {
             margin: 0;
             height: 100vh;
-            background: #000000; /* Black background for contrast */
+            background: #000000; /* Plain black background */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -18,20 +18,11 @@
             font-family: Arial, sans-serif;
             color: #ffffff;
         }
-        .explosion-background {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100vw;
-            height: 100vh;
-            background: url('https://themed-entertainment.co.uk/TE_Background.png') no-repeat center center / cover;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
         .logo-container {
-            width: 60%; /* Increased size to make logo bigger */
+            width: 60%;
             max-width: 600px;
             z-index: 1;
+            animation: pulse 3s infinite ease-in-out; /* Adds pulsing animation */
         }
         .logo-container img {
             width: 100%;
@@ -49,10 +40,18 @@
             text-shadow: 1px 1px 3px #000000; /* Shadow for readability */
             z-index: 1;
         }
+        /* Animation for pulsing effect */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05); /* Slightly increases size in the middle of animation */
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="explosion-background"></div>
     <div class="logo-container">
         <img src="https://themed-entertainment.co.uk/TE_Logo.png" alt="Themed Entertainment Logo">
     </div>
